@@ -6,8 +6,8 @@ class Agent():
     import torch
     import torch.nn.functional as F
     import torch.optim as optim         
-    from QNetwork import QNetwork 
-    from ReplayBuffer import ReplayBuffer
+    from dqn.qnetwork import QNetwork 
+    from dqn.replaybuffer import ReplayBuffer
 
     def __init__(self, state_size, action_size, seed):
         """Initialize an Agent object.

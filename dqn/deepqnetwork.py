@@ -16,7 +16,7 @@ class DeepQNetwork():
         self.env = env
         self.agent = agent
 
-    def dqn(self, env, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
+    def dqn_solver(self, env, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
         """Deep Q-Learning.
         
         Params
