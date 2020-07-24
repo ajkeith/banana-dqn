@@ -1,13 +1,13 @@
+import numpy as np
+import random
+import torch
+import torch.nn.functional as F
+import torch.optim as optim         
+import qnetwork as qn
+import replaybuffer as rp
+
 class Agent():
     """Interacts with and learns from the environment."""
-
-    import numpy as np
-    import random
-    import torch
-    import torch.nn.functional as F
-    import torch.optim as optim         
-    from dqn.qnetwork import QNetwork 
-    from dqn.replaybuffer import ReplayBuffer
 
     def __init__(self, state_size, action_size, seed):
         """Initialize an Agent object.
@@ -20,15 +20,16 @@ class Agent():
         """
         self.state_size = state_size
         self.action_size = action_size
+        x = np.sum([1,2,3])
         self.seed = random.seed(seed)
 
         # Q-Network
-        self.qnetwork_local = QNetwork(state_size, action_size, seed).to(device)
-        self.qnetwork_target = QNetwork(state_size, action_size, seed).to(device)
+        self.qnetwork_local = qn.QNetwork(state_size, action_size, seed).to(device)
+        self.qnetwork_target = qn.QNetwork(state_size, action_size, seed).to(device)
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LR)
 
         # Replay memory
-        self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
+        self.memory = rp.ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
         # Initialize time step (for updating every UPDATE_EVERY steps)
         self.t_step = 0
     

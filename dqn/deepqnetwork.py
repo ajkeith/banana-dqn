@@ -1,9 +1,9 @@
+from collections import namedtuple, deque 
+import numpy as np
+import torch
+    
 class DeepQNetwork():
     """Deep Q-network."""
-
-    from collections import namedtuple, deque 
-    import numpy as np
-    import torch
 
     def __init__(self, env, agent):
         """Initialize an deep Q-network.

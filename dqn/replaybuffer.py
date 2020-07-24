@@ -1,9 +1,9 @@
+from collections import namedtuple, deque
+import random 
+import torch 
+
 class ReplayBuffer:
     """Fixed-size buffer to store experience tuples."""
-
-    from collections import namedtuple, deque
-    import random 
-    import torch 
 
     def __init__(self, action_size, buffer_size, batch_size, seed):
         """Initialize a ReplayBuffer object.
