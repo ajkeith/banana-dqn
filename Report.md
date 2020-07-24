@@ -13,7 +13,9 @@ The environment is considered solved when the agent achieves an average reward o
 
 ## Results
 
-This implementation solved the problem by achieving an average reward of at least +13 over 100 episodes in less than 600 total episodes. The full results are shown below. 
+This implementation solved the problem by achieving an average reward of at least +13 over 100 episodes in less than 600 total episodes. The full results are shown below. The saved weights are available [here](./dqn/checkpoint.pth). 
+
+![Results](./results/score.png)
 
 ## Future Work
 
